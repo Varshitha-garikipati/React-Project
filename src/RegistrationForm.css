@@ -1,0 +1,77 @@
+/* Beautiful glass-style container */
+form {
+  max-width: 480px;
+  margin: 60px auto;
+  padding: 40px 35px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.2);
+  font-family: "Poppins", sans-serif;
+  color: #333;
+  transition: all 0.3s ease-in-out;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Subtle hover elevation */
+form:hover {
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.25);
+}
+
+/* Heading style (optional) */
+form h2 {
+  text-align: center;
+  color: #222;
+  margin-bottom: 30px;
+  font-weight: 600;
+}
+
+/* TextField spacing */
+.MuiTextField-root {
+  margin-bottom: 25px !important;
+}
+
+/* Buttons common style */
+button {
+  min-width: 130px;
+  padding: 10px 20px;
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: uppercase;
+  border-radius: 10px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Submit Button */
+button[type="submit"] {
+  background: linear-gradient(135deg, #1976d2, #42a5f5);
+  color: #fff;
+  border: none;
+}
+
+button[type="submit"]:hover {
+  background: linear-gradient(135deg, #1565c0, #2196f3);
+  transform: scale(1.05);
+}
+
+/* Reset Button */
+button[type="button"] {
+  background-color: transparent;
+  color: #1976d2;
+  border: 2px solid #1976d2;
+}
+
+button[type="button"]:hover {
+  background-color: #e3f2fd;
+  border-color: #1565c0;
+  color: #1565c0;
+  transform: scale(1.05);
+}
+
+/* Responsive behavior */
+@media (max-width: 600px) {
+  form {
+    margin: 30px 20px;
+    padding: 30px 20px;
+  }
+}
