@@ -9,15 +9,38 @@ function RegistrationForm() {
     const[email,setEmail]=useState("");
     const[number,setNumber]=useState("");
 
-    const handleSubmit=(e)=>{
-        e.preventDefault();
-        console.log({name,email,number});
-    }
+    const handleSubmit = (e) => {
+    e.preventDefault();
+
+    fetch("http://localhost:5000/register", {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ name, email, number }),
+    })
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      .then(data => {
+        console.log('Success:', data);
+        alert("Registration Successfully");
+        handleReset();
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        alert("Registration failed. Please try again.");
+      });
+  };
+
     const handleReset=()=>{
         setName("");
         setEmail("");
         setNumber("");
-    }
+    };
     return(
         <form onSubmit={handleSubmit}>
             <h2 style={{ textAlign: "center", marginBottom: "20px", color: "#1976d2" }}>
